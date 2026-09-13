@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURRRFECT DAY | Dashboard</title>
+    <link rel="stylesheet" href="PERFECTDAY.CSS">
+</head>
+<body>
+    <img class="day-birds-background" data-src="manybirds.svg" alt="" aria-hidden="true">
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="PERFECTDAY.HTML">Home</a>
+        <a href="PERFECTDAY2.HTML">Page 2</a>
+        <a href="QUESTIONS.HTML">Questions</a>
+        <a href="DASHBOARD.HTML">Dashboard</a>
+    </nav>
+
+    <header class="hero-header">
+        <h1>MY DASHBOARD</h1>
+    </header>
+
+    <main class="dashboard-shell">
+        <section class="dash-card highlight-card" id="profile-summary">
+            <h3>Perfect day snapshot</h3>
+            <div class="metric" id="score-value">--</div>
+            <p id="mood-summary">Your personalized summary will appear here.</p>
+            <div class="pill-row" id="mood-pills"></div>
+        </section>
+
+        <div class="dashboard-grid">
+            <section class="dash-card">
+                <h3>Today's vibe</h3>
+                <ul class="dash-list" id="activity-list"></ul>
+            </section>
+
+            <section class="dash-card">
+                <h3>Your style</h3>
+                <ul class="dash-list" id="style-list"></ul>
+            </section>
+
+            <section class="dash-card">
+                <h3>Energy level</h3>
+                <div class="metric" id="energy-value">--</div>
+                <p id="energy-copy">Your energy summary will appear here.</p>
+            </section>
+
+            <section class="dash-card">
+                <h3>Your perfect-day note</h3>
+                <p id="dream-day-output">Tell us about your ideal day and it will show here.</p>
+            </section>
+        </div>
+    </main>
+
+    <script src="PERFECTDAY.JS"></script>
+    <script src="dashboard-data.js"></script>
+</body>
+</html>

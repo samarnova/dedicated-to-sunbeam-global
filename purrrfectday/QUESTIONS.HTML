@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PURRRFECT DAY | Questions</title>
+    <link rel="stylesheet" href="PERFECTDAY.CSS">
+</head>
+<body>
+    <img class="day-birds-background" data-src="manybirds.svg" alt="" aria-hidden="true">
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="PERFECTDAY.HTML">Home</a>
+        <a href="PERFECTDAY2.HTML">Page 2</a>
+        <a href="QUESTIONS.HTML">Questions</a>
+        <a href="DASHBOARD.HTML">Dashboard</a>
+    </nav>
+
+    <header class="hero-header">
+        <h1>YOUR PERFECT DAY</h1>
+    </header>
+
+    <main class="dashboard-shell">
+        <section class="dash-card">
+            <h3>Quick questions</h3>
+            <form id="user-form">
+                <p>
+                    <label for="name-input">What should we call you?</label><br>
+                    <input id="name-input" type="text" placeholder="Your name" style="width: 100%; max-width: 400px; margin-top: 8px; padding: 10px; font: inherit; border-radius: 8px; border: 2px solid #b79bd1;">
+                </p>
+
+                <p>
+                    Which vibe fits you best?<br>
+                    <label><input type="radio" name="vibe" value="Calm"> Calm</label><br>
+                    <label><input type="radio" name="vibe" value="Creative"> Creative</label><br>
+                    <label><input type="radio" name="vibe" value="Social"> Social</label><br>
+                    <label><input type="radio" name="vibe" value="Active"> Active</label>
+                </p>
+
+                <p>
+                    Choose your favorite activities:<br>
+                    <label><input type="checkbox" name="activity" value="Coffee"> Coffee</label><br>
+                    <label><input type="checkbox" name="activity" value="Hike"> Hike</label><br>
+                    <label><input type="checkbox" name="activity" value="Music"> Music</label><br>
+                    <label><input type="checkbox" name="activity" value="Friends"> Friends</label><br>
+                    <label><input type="checkbox" name="activity" value="Reading"> Reading</label>
+                </p>
+
+                <p>
+                    <label for="energy-input">How energized do you feel today? (1-10)</label><br>
+                    <input id="energy-input" type="number" min="1" max="10" value="7" style="width: 100%; max-width: 120px; margin-top: 8px; padding: 10px; font: inherit; border-radius: 8px; border: 2px solid #b79bd1;">
+                </p>
+
+                <p>
+                    <label for="dream-day-input">Write your ideal day in a few words</label><br>
+                    <textarea id="dream-day-input" rows="4" placeholder="A cozy morning, music, good food, and a walk..." style="width: 100%; max-width: 600px; margin-top: 8px; padding: 10px; font: inherit; border-radius: 8px; border: 2px solid #b79bd1; resize: vertical;"></textarea>
+                </p>
+
+                <button type="submit">Save to dashboard</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="PERFECTDAY.JS"></script>
+    <script>
+        document.getElementById('user-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name-input').value.trim() || 'You';
+            const theme = document.querySelector('input[name="theme"]:checked')?.value || 'day';
+            const vibe = document.querySelector('input[name="vibe"]:checked')?.value || 'Balanced';
+            const activities = Array.from(document.querySelectorAll('input[name="activity"]:checked')).map(item => item.value);
+            const energy = Number(document.getElementById('energy-input').value) || 7;
+            const dreamDay = document.getElementById('dream-day-input').value.trim() || 'A day full of joy and intention.';
+
+            const profile = {
+                name,
+                theme,
+                vibe,
+                activities,
+                energy,
+                dreamDay
+            };
+
+            localStorage.setItem('purrrfect-user-profile', JSON.stringify(profile));
+            window.location.href = 'DASHBOARD.HTML';
+        });
+    </script>
+</body>
+</html>

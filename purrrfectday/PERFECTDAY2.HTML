@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A PURRRFECT DAY! | Page 2</title>
+    <link rel="stylesheet" href="PERFECTDAY.CSS">
+    <link rel="stylesheet" href="WORDPUZZLE.CSS">
+    <link rel="stylesheet" href="JIGSAW.CSS">
+    <link rel="stylesheet" href="MEMORY.CSS"> 
+    <link rel="stylesheet" href="ODDONEOUT.CSS">
+
+
+</head>
+<body class="beach-theme">
+    <img class="day-birds-background" data-src="manybirds.svg" alt="" aria-hidden="true">
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="PERFECTDAY.HTML">Home</a>
+        <a href="PERFECTDAY2.HTML">Page 2</a>
+        <a href="QUESTIONS.HTML">Questions</a>
+        <a href="DASHBOARD.HTML">Dashboard</a>
+    </nav>
+
+    <header class="hero-header">
+        <div class="beach-sun" aria-hidden="true"></div>
+        <div class="beach-title">
+            <p class="beach-eyebrow">salt air / soft waves / slow days</p>
+            <h1>A PURRRFECT DAY AT THE BEACH</h1>
+            <p class="beach-subtitle">Let the tide set the pace.</p>
+        </div>
+    </header>
+
+    <main class="beach-scene" aria-label="Beach scene">
+        
+        <div class="beach-wave beach-wave-one" aria-hidden="true"></div>
+        <div class="beach-wave beach-wave-two" aria-hidden="true"></div>
+        <div class="beach-sand" aria-hidden="true"></div>
+       <div class="beach-intro-layout">
+  <div class="beach-intro-text">
+    <p class="beach-puzzle-story">
+      Grab a shell, follow the footprints, and a silly seaside puzzle with your beach friends.
+      Every wave brings a new clue, and the best part is cracking it before the time runs out!
+    </p>
+
+    <p class="beach-message">
+      A new little mystery washes ashore with every tide.
+    </p>
+  </div>
+
+  <div class="beach-intro-image-wrap">
+    <img
+      class="beach-intro-image"
+      src="Lilo & Stitch.jfif"
+      alt="A cheerful beach scene"
+    >
+  </div>
+</div>
+
+
+    
+    </main>
+
+<div class="game-hub-container">
+
+    <div class="game-selection-panel">
+        <h2>Select a FUN by the Beach Activity!</h2>
+        <div class="card-row">
+            <div class="menu-card" onclick="switchGame('wordsearch', this)">
+                <h3>🔍 Beach Word Puzzle</h3>
+                <p>Find hidden seaside words buried in the sunny sand grid.</p>
+            </div>
+
+            <div class="menu-card" onclick="switchGame('jigsaw', this)">
+                <h3>🧩 Jigsaw Puzzle</h3>
+                <p>Piece together a beautiful, vibrant seaside picture.</p>
+            </div>
+
+            <div class="menu-card" onclick="switchGame('memory', this)">
+                <h3>🐟 Ocean Match</h3>
+                <p>Test your memory by pairing up cute deep-sea creatures.</p>
+            </div>
+
+            <div class="menu-card" onclick="switchGame('oddoneout', this)">
+                <h3>🕵️ Odd One Out</h3>
+                <p>Spot the imgs that doesn't belong in the row.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="game-play-area">
+    <button id="exit-game-btn" class="exit-game-btn" onclick="exitGame()">✕ Exit</button>
+
+        <div id="wordsearch-game" class="game-view">
+            <div class="word-puzzle-panel">
+                <div class="wp-board">
+                    <div id="wp-grid"></div>
+                </div>
+            </div>
+            <div class="wp-side">
+                <h2>Words to find</h2>
+                <ul id="wp-wordlist"></ul>
+                <div id="wp-status"></div>
+                <button id="wp-new-btn">New puzzle</button>
+            </div>
+        </div>
+
+<div id="jigsaw-game" class="game-view">
+  <div class="jigsaw-panel">
+    <div class="jigsaw-main">
+      <div class="jigsaw-board-wrap">
+        <div id="jigsaw-board" class="jigsaw-board" aria-label="Jigsaw puzzle board"></div>
+      </div>
+
+      <div id="jigsaw-progress" class="jigsaw-progress" aria-label="Jigsaw progress">
+        <button class="jigsaw-progress-box" data-puzzle="0" type="button">1</button>
+        <button class="jigsaw-progress-box" data-puzzle="1" type="button">2</button>
+        <button class="jigsaw-progress-box" data-puzzle="2" type="button">3</button>
+        <button class="jigsaw-progress-box" data-puzzle="3" type="button">4</button>
+        <button class="jigsaw-progress-box" data-puzzle="4" type="button">5</button>
+        <button class="jigsaw-progress-box" data-puzzle="5" type="button">6</button>
+      </div>
+    </div>
+
+    <div class="jigsaw-side">
+      <h2>Match the picture</h2>
+      <img id="jigsaw-reference" class="jigsaw-reference" src="" alt="Preview of the current jigsaw image">
+      <div id="jigsaw-puzzle-label" class="jigsaw-puzzle-label">Jigsaw 1 of 6</div>
+      <div id="jigsaw-status" role="status" aria-live="polite"></div>
+
+      <div class="jigsaw-actions">
+        <button id="jigsaw-done-btn" type="button">Done</button>
+        <button id="jigsaw-next-btn" type="button" disabled>Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+
+        <div id="memory-game" class="game-view">
+  <div class="memory-panel">
+    <div class="memory-header">
+      <div>
+        <p class="memory-eyebrow">🐟 Ocean Match</p>
+        <h2>Find the hidden sea friends!</h2>
+        <p class="memory-intro">
+          Flip two cards at a time and match every ocean creature pair.
+        </p>
+      </div>
+
+      <div class="memory-header-icon" aria-hidden="true">🌊</div>
+    </div>
+
+    <div class="memory-stats" aria-label="Ocean Match score">
+      <div class="memory-stat">
+        <span class="memory-stat-label">Moves</span>
+        <strong id="memory-moves">0</strong>
+      </div>
+
+      <div class="memory-stat">
+        <span class="memory-stat-label">Score</span>
+        <strong id="memory-score">0</strong>
+      </div>
+
+      <div class="memory-stat">
+        <span class="memory-stat-label">Matches</span>
+        <strong id="memory-matches">0/8</strong>
+      </div>
+
+      <div class="memory-stat">
+        <span class="memory-stat-label">Time</span>
+        <strong id="memory-timer">00:00</strong>
+      </div>
+
+      <div class="memory-stat memory-best-stat">
+        <span class="memory-stat-label">Best score</span>
+        <strong id="memory-best-score">—</strong>
+      </div>
+    </div>
+
+    <div class="memory-game-layout">
+      <div class="memory-board-wrap">
+        <div
+          id="memory-board"
+          class="memory-board"
+          aria-label="Ocean Match cards">
+        </div>
+      </div>
+
+      <aside class="memory-side" aria-live="polite">
+        <div class="memory-side-shell">
+          <div class="memory-treasure" aria-hidden="true">🐚</div>
+          <p class="memory-side-label">Explorer note</p>
+
+          <div id="memory-status" class="memory-status">
+            Flip two cards to find your first ocean match.
+          </div>
+
+          <div class="memory-rule-list">
+            <p><span>01</span> Flip one card.</p>
+            <p><span>02</span> Flip a second card.</p>
+            <p><span>03</span> Find a matching pair.</p>
+          </div>
+
+          <button id="memory-new-btn" class="memory-new-btn" type="button">
+            <span aria-hidden="true">↻</span>
+            New game
+          </button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<div id="oddoneout-game" class="game-view">
+  <div class="odd-panel">
+    <div class="odd-header">
+      <div>
+        <p class="odd-eyebrow">🕵️ Beach Detective</p>
+        <h2>Spot the odd one out!</h2>
+        <p class="odd-intro">
+          Three pictures belong together. One does not. Can you find it?
+        </p>
+      </div>
+
+      <div class="odd-header-icon" aria-hidden="true">🔎</div>
+    </div>
+
+    <div class="odd-stats">
+      <div class="odd-stat">
+        <span>Round</span>
+        <strong id="odd-round">1 / 3</strong>
+      </div>
+
+      <div class="odd-stat">
+        <span>Score</span>
+        <strong id="odd-score">0</strong>
+      </div>
+
+      <div class="odd-stat">
+        <span>Correct</span>
+        <strong id="odd-correct">0</strong>
+      </div>
+    </div>
+
+    <div id="odd-status" class="odd-instructions" role="status" aria-live="polite">
+      Choose the picture that does not belong.
+    </div>
+
+    <div
+      id="odd-options"
+      class="odd-options"
+      aria-label="Odd One Out choices">
+    </div>
+
+    <div class="odd-controls">
+      <button id="odd-hint-btn" class="odd-hint-btn" type="button">
+        💡 Show hint
+      </button>
+
+      <button id="odd-next-btn" class="odd-next-btn" type="button" disabled>
+        Next round →
+      </button>
+
+      <button id="odd-new-btn" class="odd-new-btn" type="button">
+        ↻ Restart
+      </button>
+    </div>
+
+    <div id="odd-hint" class="odd-hint" hidden></div>
+  </div>
+</div>
+
+<!-- 5. Find the Items Placeholder -->
+<div id="finditems-game" class="game-view">
+  <div class="placeholder-msg">👀 Find the Items Coming Soon!</div>
+</div>
+
+    <button class="beach-sound-toggle" id="beach-sound-toggle" type="button" aria-label="Mute shore sounds" aria-pressed="true" title="Mute shore sounds">
+        <span class="beach-sound-icon" id="beach-sound-icon" aria-hidden="true">🔊</span>
+    </button>
+    <div class="tide-wipe" aria-hidden="true"></div>
+
+    <div class="wave-takeover" id="wave-takeover" aria-hidden="true">
+        <div class="wave-takeover-water"></div>
+        <div class="wave-takeover-crest wave-takeover-crest-one"></div>
+        <div class="wave-takeover-crest wave-takeover-crest-two"></div>
+        <div class="wave-takeover-crest wave-takeover-crest-three"></div>
+    </div>
+
+    <script src="PERFECTDAY.JS"></script>
+    <script src="WORDPUZZLE.JS"></script>
+    <script src="JIGSAW.JS"></script>
+    <script src="MEMORY.JS"></script>
+    <script src="ODDONEOUT.JS"></script>
+    <script src="SOUND.JS"></script>
+
+
+
+</body>
+</html>
