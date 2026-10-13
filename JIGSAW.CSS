@@ -1,0 +1,222 @@
+/* Jigsaw puzzle styles — scoped under .jigsaw-panel */
+
+.jigsaw-panel {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 900px;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.jigsaw-board-wrap {
+  background: rgba(255, 255, 255, 0.55);
+  border: 3px solid #1a4f5c;
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.jigsaw-board {
+  display: grid;
+  gap: 2px;
+  width: min(60vw, 420px);
+  aspect-ratio: 1 / 1;
+}
+
+.jigsaw-piece {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.jigsaw-piece:hover {
+  transform: scale(0.97);
+}
+
+.jigsaw-piece.selected {
+  box-shadow: 0 0 0 4px #f2c14e inset;
+  transform: scale(0.94);
+}
+
+.jigsaw-side {
+  min-width: 200px;
+}
+
+.jigsaw-side h2 {
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+  color: #1a4f5c;
+}
+
+.jigsaw-reference {
+    width: 100%;
+    height: auto;            
+    max-width: 220px;
+    aspect-ratio: 4 / 3;      /* 2. Change from 1 / 1 to 4 / 3 to match a beach horizon shape */
+      object-fit: contain;
+  background-color: #e8f6f8;
+    border: 2px solid #2c7c8f;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+
+#jigsaw-status {
+  margin-top: 10px;
+  font-weight: 700;
+  color: #1a4f5c;
+  min-height: 1.4em;
+}
+
+#jigsaw-new-btn {
+  margin-top: 10px;
+  background: #2c7c8f;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+#jigsaw-new-btn:hover {
+  background: #1a4f5c;
+}
+
+/* Six-puzzle progression layout */
+.jigsaw-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.jigsaw-progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.jigsaw-progress-box {
+  width: 34px;
+  height: 34px;
+  border: 2px solid #2c7c8f;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1a4f5c;
+  font-weight: 700;
+  cursor: default;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.jigsaw-progress-box.current {
+  background: #f2c14e;
+  border-color: #d79d18;
+  color: #173b43;
+  transform: translateY(-3px);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.jigsaw-progress-box.completed {
+  background: #54b889;
+  border-color: #328260;
+  color: #ffffff;
+}
+
+.jigsaw-puzzle-label {
+  margin: 2px 0 8px;
+  color: #1a4f5c;
+  font-weight: 700;
+}
+
+.jigsaw-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.jigsaw-actions button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+#jigsaw-done-btn {
+  background: #2c7c8f;
+}
+
+#jigsaw-next-btn {
+  background: #54a978;
+}
+
+.jigsaw-actions button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.jigsaw-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+#jigsaw-status {
+  max-width: 260px;
+  line-height: 1.4;
+}
+
+.jigsaw-status-success {
+  color: #247346 !important;
+}
+
+.jigsaw-status-error {
+  color: #b33a3a !important;
+}
+
+.jigsaw-status-normal {
+  color: #1a4f5c !important;
+}
+
+.jigsaw-celebrate .jigsaw-board-wrap {
+  animation: jigsaw-celebrate 0.7s ease;
+}
+
+@keyframes jigsaw-celebrate {
+  0%, 100% { transform: scale(1); }
+  35% { transform: scale(1.04) rotate(-1deg); }
+  70% { transform: scale(1.04) rotate(1deg); }
+}
+
+@media (max-width: 600px) {
+  .jigsaw-panel {
+    gap: 16px;
+  }
+
+  .jigsaw-board {
+    width: min(82vw, 420px);
+  }
+
+  .jigsaw-side {
+    width: min(82vw, 300px);
+    text-align: center;
+  }
+
+  .jigsaw-reference {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .jigsaw-actions {
+    justify-content: center;
+  }
+}

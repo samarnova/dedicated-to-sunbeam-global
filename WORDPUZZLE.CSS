@@ -1,0 +1,169 @@
+/* Word puzzle styles — scoped under .word-puzzle-panel so nothing else on the page is affected */
+
+.word-puzzle-panel{
+  display:flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items:flex-start;
+  justify-content:center;
+  margin: 32px auto;
+  max-width: 900px;
+}
+
+.word-puzzle-panel .wp-board{
+  background: rgba(255,255,255,0.55);
+  border: 3px solid #1a4f5c;
+  border-radius: 14px;
+  padding: 14px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.word-puzzle-panel #wp-grid{
+  display: grid;
+  gap: 3px;
+}
+
+.word-puzzle-panel .wp-cell{
+  width: 32px;
+  height: 32px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 700;
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  background: #fffdf7;
+  color:#2a2420;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .1s ease;
+}
+
+.word-puzzle-panel .wp-cell.selecting{ background: #f2c14e; }
+.word-puzzle-panel .wp-cell.found{ background: #7fb069; color:#fff; }
+
+.word-puzzle-panel .wp-side{
+  min-width: 200px;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+
+.word-puzzle-panel .wp-side h2{
+  font-size: 1.1rem;
+  margin: 0 0 10px;
+  color: #1a4f5c;
+}
+
+.word-puzzle-panel #wp-wordlist{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.word-puzzle-panel #wp-wordlist li{
+  font-size: 1rem;
+  padding: 6px 10px;
+  background: #fffdf7;
+  border-radius: 8px;
+  border-left: 4px solid #2c7c8f;
+}
+
+.word-puzzle-panel #wp-wordlist li.done{
+  text-decoration: line-through;
+  color: #999;
+  border-left-color: #7fb069;
+  background: #eef6ea;
+}
+
+.word-puzzle-panel #wp-status{
+  margin-top: 16px;
+  font-weight: 700;
+  color: #1a4f5c;
+  min-height: 1.4em;
+}
+
+.word-puzzle-panel #wp-new-btn{
+  margin-top: 14px;
+  background: #2c7c8f;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.word-puzzle-panel #wp-new-btn:hover{ background: #1a4f5c; }
+/* ---- Sea wave takeover for the "New puzzle" refresh ---- */
+
+.wave-takeover {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+body.wave-sweeping .wave-takeover {
+  visibility: visible;
+}
+
+.wave-takeover-water {
+  position: absolute;
+  left: -5%;
+  width: 110%;
+  height: 130%;
+  top: 100%;
+  background: linear-gradient(180deg, #7fd6e8 0%, #3aa8c4 48%, #12718a 100%);
+  box-shadow: inset 0 22px 34px rgba(255, 255, 255, 0.4);
+}
+
+.wave-takeover-crest {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+}
+
+body.wave-sweeping .wave-takeover-water {
+  animation: waveTakeoverRise 1.9s cubic-bezier(0.66, 0, 0.34, 1) both;
+}
+
+body.wave-sweeping .wave-takeover-crest-one {
+  animation: waveTakeoverCrest 1.9s cubic-bezier(0.66, 0, 0.34, 1) both;
+}
+
+body.wave-sweeping .wave-takeover-crest-two {
+  animation: waveTakeoverCrest 1.9s cubic-bezier(0.66, 0, 0.34, 1) 0.08s both;
+}
+
+body.wave-sweeping .wave-takeover-crest-three {
+  animation: waveTakeoverCrest 1.9s cubic-bezier(0.66, 0, 0.34, 1) 0.16s both;
+}
+
+@keyframes waveTakeoverRise {
+  0%   { transform: translateY(0); }
+  38%  { transform: translateY(-108%); }
+  64%  { transform: translateY(-108%); }
+  100% { transform: translateY(-104%); }
+}
+
+@keyframes waveTakeoverCrest {
+  0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+  30%  { opacity: 0.9; }
+  38%  { transform: translateY(8vh) rotate(-3deg); opacity: 0.95; }
+  64%  { transform: translateY(10vh) rotate(2deg); opacity: 0.9; }
+  100% { transform: translateY(102vh) rotate(-2deg); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave-takeover { display: none; }
+}
