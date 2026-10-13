@@ -1,0 +1,40 @@
+<!-- Odd One Out game interface -->
+<!-- Place this section inside the existing game-play-area in PERFECTDAY2.HTML. -->
+<div id="oddoneout-game" class="game-view">
+  <div class="odd-panel">
+    <div class="odd-header">
+      <div>
+        <p class="odd-eyebrow">🕵️ Beach Detective</p>
+        <h2>Spot the odd one out!</h2>
+        <p class="odd-intro">Three pictures belong together. One does not. Can you find it?</p>
+      </div>
+      <div class="odd-header-icon" aria-hidden="true">🔎</div>
+    </div>
+
+    <div class="odd-stats" aria-label="Odd One Out score">
+      <div class="odd-stat"><span>Round</span><strong id="odd-round">1 / 3</strong></div>
+      <div class="odd-stat"><span>Score</span><strong id="odd-score">0</strong></div>
+      <div class="odd-stat"><span>Correct</span><strong id="odd-correct">0</strong></div>
+    </div>
+
+    <div class="odd-instructions" id="odd-status" role="status" aria-live="polite">
+      Choose the picture that does not belong.
+    </div>
+
+    <div id="odd-options" class="odd-options" aria-label="Odd One Out choices"></div>
+
+    <div class="odd-controls">
+      <button id="odd-hint-btn" class="odd-hint-btn" type="button">💡 Show hint</button>
+      <button id="odd-next-btn" class="odd-next-btn" type="button" disabled>Next round →</button>
+      <button id="odd-new-btn" class="odd-new-btn" type="button">↻ Restart</button>
+    </div>
+
+    <div id="odd-hint" class="odd-hint" hidden></div>
+  </div>
+</div>
+
+<!-- Add this inside <head> of PERFECTDAY2.HTML: -->
+<!-- <link rel="stylesheet" href="ODDONEOUT.CSS"> -->
+
+<!-- Add this before </body> of PERFECTDAY2.HTML: -->
+<!-- <script src="ODDONEOUT.JS"></script> -->

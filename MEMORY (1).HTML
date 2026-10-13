@@ -1,0 +1,81 @@
+<!-- Ocean Match game interface -->
+<!-- Place the game panel inside the existing game-play-area in PERFECTDAY2.HTML. -->
+<div id="memory-game" class="game-view">
+  <div class="memory-panel">
+    <div class="memory-header">
+      <div>
+        <p class="memory-eyebrow">🐟 Ocean Match</p>
+        <h2>Find the hidden sea friends!</h2>
+        <p class="memory-intro">
+          Flip two cards at a time and match every ocean creature pair.
+        </p>
+      </div>
+
+      <div class="memory-header-icon" aria-hidden="true">🌊</div>
+    </div>
+
+    <div class="memory-stats" aria-label="Ocean Match score">
+      <div class="memory-stat">
+        <span class="memory-stat-label">Moves</span>
+        <strong id="memory-moves">0</strong>
+      </div>
+
+      <div class="memory-stat">
+        <span class="memory-stat-label">Score</span>
+        <strong id="memory-score">0</strong>
+      </div>
+
+      <div class="memory-stat">
+        <span class="memory-stat-label">Matches</span>
+        <strong id="memory-matches">0/8</strong>
+      </div>
+
+      <div class="memory-stat">
+        <span class="memory-stat-label">Time</span>
+        <strong id="memory-timer">00:00</strong>
+      </div>
+
+      <div class="memory-stat memory-best-stat">
+        <span class="memory-stat-label">Best score</span>
+        <strong id="memory-best-score">—</strong>
+      </div>
+    </div>
+
+    <div class="memory-game-layout">
+      <div class="memory-board-wrap">
+        <div
+          id="memory-board"
+          class="memory-board"
+          aria-label="Ocean Match cards"
+        ></div>
+      </div>
+
+      <aside class="memory-side" aria-live="polite">
+        <div class="memory-side-shell">
+          <div class="memory-treasure" aria-hidden="true">🐚</div>
+          <p class="memory-side-label">Explorer note</p>
+          <div id="memory-status" class="memory-status">
+            Flip two cards to find your first ocean match.
+          </div>
+
+          <div class="memory-rule-list">
+            <p><span>01</span> Flip one card.</p>
+            <p><span>02</span> Flip a second card.</p>
+            <p><span>03</span> Find a matching pair.</p>
+          </div>
+
+          <button id="memory-new-btn" class="memory-new-btn" type="button">
+            <span aria-hidden="true">↻</span>
+            New game
+          </button>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<!-- Add this once inside the <head> of PERFECTDAY2.HTML: -->
+<!-- <link rel="stylesheet" href="MEMORY.CSS"> -->
+
+<!-- Add this once before </body> in PERFECTDAY2.HTML: -->
+<!-- <script src="MEMORY.JS"></script> -->
