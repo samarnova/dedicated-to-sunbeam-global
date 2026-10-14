@@ -250,11 +250,11 @@ body.beach-theme {
     min-height: 100vh;
     padding: 32px 48px;
     border-color: var(--frame-border);
-    background-color: #f7f7f4;
+    background-color: #d79e68;
     background-image: url("beach-backdrop.svg");
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% auto;
     background-attachment: scroll;
     animation: none;
     overflow-x: hidden;
@@ -306,7 +306,7 @@ body.beach-theme .site-nav a:hover {
 }
 
 body.beach-theme .hero-header {
-    min-height: 42vh;
+    min-height: 30vh;
     position: relative;
     flex-direction: column;
     gap: 12px;
@@ -407,33 +407,27 @@ body.beach-theme .hero-header h1 {
 }
 
 .beach-message {
-    position: absolute;
-    bottom: 0%;
-    left: 0;
-    width: 100%;
+    position: relative;
+    margin: 24px 0 0;
     color: #21800e;
     font-family: Georgia, serif;
     font-size: clamp(1.15rem, 2vw, 1.65rem);
-    text-align: center;
+    text-align: left;
     text-shadow: 0 2px 5px rgba(23, 68, 90, 0.22);
 }
 
 .beach-puzzle-story {
-    position: absolute;
-    left: 50%;
-    bottom: 17%;
+    position: relative;
     z-index: 4;
-    width: min(82%, 620px);
+    width: 100%;
     margin: 0;
     padding: 16px 22px;
     border-left: 5px solid #f9d77a;
     color: #312d1e;
-    
     font-family: Georgia, serif;
     font-size: clamp(1rem, 1.8vw, 1.3rem);
     line-height: 1.45;
     text-align: left;
-    transform: translateX(-50%);
 }
 
     .sand-steps,
@@ -660,7 +654,7 @@ body.tide-refreshing .sand-steps {
     }
 
     body.beach-theme .hero-header {
-        min-height: 46vh;
+        min-height: 30vh;
     }
 
     .beach-sun {
@@ -672,11 +666,6 @@ body.tide-refreshing .sand-steps {
 
     .beach-scene {
         margin: 0 -20px -20px;
-    }
-
-    .beach-puzzle-story {
-        bottom: 25%;
-        width: 76%;
     }
 
     .tide-refresh {
@@ -1348,7 +1337,7 @@ body.night-theme .theme-choice {
 }
 
 .game-view.active {
-    display: flex;
+    display: none;
     flex-direction: row; /* Keeps your puzzle board and 'Words to find' side-by-side */
     gap: 40px;
     align-items: flex-start;
@@ -1467,6 +1456,6 @@ body.night-theme .theme-choice {
         text-align: center !important;
     }
     .beach-intro-text {
-        text-align: center !important;
+        text-align: left !important;
     }
 }
