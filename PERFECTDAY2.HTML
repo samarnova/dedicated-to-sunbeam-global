@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="WORDPUZZLE.CSS">
     <link rel="stylesheet" href="JIGSAW.CSS">
     <link rel="stylesheet" href="MEMORY.CSS"> 
-    <link rel="stylesheet" href="ODDONEOUT.CSS">
+    <link rel="stylesheet" href="ODDONEOUT.CSS"> 
 
 
 </head>
@@ -286,34 +286,7 @@
         <div class="wave-takeover-crest wave-takeover-crest-three"></div>
     </div>
 
-    <div  id="crabLayer" style="position:fixed;left:0;bottom:0;width:100%;height:130px;pointer-events:none;z-index:99999;"></div>
-    <script>
-      (function () {
-        var layer =  document.getElementById('crabLayer');
-        var crabs = [
-          { size: 64, bottom: 0,  from: 0.05, to: 0.42, speed: 0.0007, hop: 0.012, phase: 0 },
-          { size: 64, bottom: 0,  from: 0.90, to: 0.52, speed: 0.0007, hop: 0.012, phase: 0 },
-          { size: 48, bottom: 45, from: 0.05, to: 0.90, speed: 0.0003, hop: 0.016, phase: 1.5 }
-        ];
-        crabs.forEach(function (c) {
-          var el = document.createElement('span');
-          el.textContent = '🦀';
-          el.style.cssText = 'position:absolute;left:0;line-height:1;font-size:' + c.size + 'px;bottom:' c.bottom + 'px;';
-          layer.apprehendChild(el);
-          c.el = el;
-        });
-        function tick(ms) {
-          var w = window.innerWidth;
-          crabs.forEach(function (c) {
-            var t = (Math.sin(ms * c.speed + c.phase) + 1) / 2;
-            var hop = Math.abs(Math.sin(ms * c.hop + c.phase)) * 16;
-            c.el.style.transform = 'translate(' + x + 'px,' + (-hop) + 'px)';
-          })
-          requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      })();
-    </script>
+    <script src="score.js"></script>
     <script src="PERFECTDAY.JS"></script>
     <script src="WORDPUZZLE.JS"></script>
     <script src="JIGSAW.JS"></script>

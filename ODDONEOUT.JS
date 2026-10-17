@@ -54,6 +54,7 @@
   let currentRound = 0;
   let score = 0;
   let correctAnswers = 0;
+  let wrongAnswers = 0;
   let roundSolved = false;
 
   function setStatus(message, type = "normal") {
@@ -117,6 +118,7 @@
       roundSolved = true;
       correctAnswers += 1;
       score += 100;
+      saveGameScore("oddoneout",correctAnswers, wrongAnswers, currentRound === ODD_ROUNDS.length - 1);
       selectedButton.classList.add("is-correct");
       setStatus(
         currentRound === ODD_ROUNDS.length - 1
@@ -137,6 +139,8 @@
 
     window.gameSounds?.wrong?.();
     score = Math.max(0, score - 10);
+    wrongAnswers += 1;
+    saveGameScore("oddoneout",correctAnswers, wrongAnswers, false);
     selectedButton.classList.add("is-wrong");
     setStatus("Not that one — look closely and try again.", "error");
     updateStats();
@@ -170,6 +174,7 @@
     currentRound = 0;
     score = 0;
     correctAnswers = 0;
+    wrongAnswers = 0;
     renderRound();
   }
 

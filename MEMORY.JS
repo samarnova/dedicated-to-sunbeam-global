@@ -167,6 +167,8 @@
     } else {
       handleMismatch();
     }
+
+    saveGameScore("oceanmatch", matches, moves - matches, matches === MEMORY_PAIRS.length);
   }
 
   function handleMatch() {
