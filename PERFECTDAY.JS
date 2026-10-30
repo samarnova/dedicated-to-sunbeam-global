@@ -934,6 +934,7 @@ function switchGame(gameType, element)  {
         document.querySelector('.hero-header').style.display = 'none';
     document.querySelector('.beach-scene').style.display = 'none';
     document.querySelector('.game-play-area').classList.add('active');
+    localStorage.setItem("purrrfect-current-game", gameType);
 
     const targetGame = document.getElementById(`${gameType}-game`);
     if (targetGame) {
@@ -942,3 +943,15 @@ function switchGame(gameType, element)  {
     }
 }
 
+function exitGame() {
+    document.querySelectorAll('menu-card').forEach(card => classList.remove('active'));
+    document.queryselectorAll('.game-view').forEach(view => {
+        view.classList.remove('active');
+        view.style.display = 'none';
+    });
+    document.querySelector('.game-selection-panel').style.display = '';
+    document.querySelector('.hero-header').style.display = '';
+    document.querySelector('.beach-scene').style.display ='';
+    document.querySelector('.game-play-area').classList.remove('active');
+    localStorage.removeItem("purrrfect-current-game");
+}

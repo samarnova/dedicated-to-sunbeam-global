@@ -72,7 +72,7 @@
   border-left: 4px solid #2c7c8f;
 }
 
-.word-puzzle-panel #wp-wordlist li.done{
+#wp-wordlist li.done{
   text-decoration: line-through;
   color: #999;
   border-left-color: #7fb069;

@@ -4,9 +4,11 @@ const WP_WORDS = ["CALM","SOCIAL","ACTIVE","COFFEE","HIKE","MUSIC","FRIENDS","RE
 const WP_SIZE = 12;
 
 let wpGrid, wpCellEls, wpFoundWords, wpSelecting, wpStartCell;
+let wpWwrongCount = 0;
 
 function wpInit(){
   wpFoundWords = new Set();
+  wpWrongCount = 0;
   wpSelecting = false;
   wpStartCell = null;
   wpGrid = wpBuildGrid();
@@ -140,10 +142,13 @@ function wpCheckWord(cells){
   if(match){
     wpFoundWords.add(match);
     cells.forEach(({r,c}) => wpCellEls[r][c].classList.add("found"));
+    saveGameScore("wordpuzzle",wpFoundWords.size,wpWrongCount, wpFoundWords.size === WP_WORDS.length);
     wpRenderWordList();
     if(wpFoundWords.size === WP_WORDS.length){
       document.getElementById("wp-status").textContent = "🎉 You found every word!";
     }
+  } else {
+    wpWrongCount += 1;
   }
 }
 

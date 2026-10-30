@@ -17,6 +17,8 @@ const JW_IMAGE_SOURCES = [
 
 let jwPuzzleImages = [];
 let jwCurrentPuzzle = 0;
+let jwSolvedCount = 0;
+let jwWrongAttempts = 0;
 let jwPieces = [];
 let jwSelectedIndex = null;
 let jwPieceEls = [];
@@ -161,11 +163,15 @@ function jwCheckDone() {
 
   if (!jwIsSolved()) {
     window.gameSounds?.wrong?.();
+    jwWrongAttempts += 1;
+    saveGameScore("jigsaw", jwSolvedCount,jwWrongAttempts, false);
     jwSetStatus("Please finish the jigsaw first to reveal the next puzzle.", "error");
     return;
   }
 
   jwPuzzleSolved = true;
+  jwSolvedCount += 1;
+  saveGameScore("jigsaw", jwSolvedCount,jwWrongAttempts,jwCurrentPuzzle === JW_TOTAL_PUZZLES - 1);
   window.gameSounds?.correct?.();
   jwUpdateProgress();
   jwUpdateButtons();

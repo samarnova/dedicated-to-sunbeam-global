@@ -409,9 +409,10 @@ body.beach-theme .hero-header h1 {
 .beach-message {
     position: relative;
     margin: 24px 0 0;
-    color: #21800e;
+    color: #e0c22b;
     font-family: Georgia, serif;
     font-size: clamp(1.15rem, 2vw, 1.65rem);
+    font-weight: 700;
     text-align: left;
     text-shadow: 0 2px 5px rgba(23, 68, 90, 0.22);
 }

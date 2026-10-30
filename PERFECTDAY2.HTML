@@ -293,8 +293,20 @@
     <script src="MEMORY.JS"></script>
     <script src="ODDONEOUT.JS"></script>
     <script src="SOUND.JS"></script>
-
-
+    <script>
+      document.querySelectorAll('.site-nav-a').forEach(link => {
+        link.addEventListener('click', () => {
+          localStorage.removeItem("purrrfect-current-game");
+        });
+      });
+      const savedGame = localStorage.getItem("purrrfect-current-game");
+      const navType = performance.getEntriesByType("navigation")[0]?.type;
+      if (savedGame && navType ==- "reload") {
+        switchGame (savedGame, null);
+      } else {
+        locslStorage.RemoveItem("purrrfect-current-game");
+      }
+    </script>
 
 </body>
 </html>
