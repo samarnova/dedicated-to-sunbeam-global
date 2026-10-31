@@ -16,3 +16,6 @@ Built the core concept and basic functoning webpage during the fast paced event 
 
 *PHASE II ( SUNBEAM GLOBAL )*
 Spent two weeks refining the code, adding new features, and successfully submitting right at the final deadline.
+
+*PHASE III ( STARDANCE )*
+Heard abt stardance pretty late so i decided to modify the wensite since so much ad already been done but it was still not as much that could've been done. So, i went ahead made modifications, encountered bugs, fixed bugs, and still want to make major modifications but guess what... i got busy and totally sidelined it. but yea now im making some other fixes for bugs that showed up at the 11th hour n im gna ship.

@@ -409,12 +409,13 @@ body.beach-theme .hero-header h1 {
 .beach-message {
     position: relative;
     margin: 24px 0 0;
-    color: #e0c22b;
+    color: #2ca76d;
     font-family: Georgia, serif;
     font-size: clamp(1.15rem, 2vw, 1.65rem);
     font-weight: 700;
     text-align: left;
     text-shadow: 0 2px 5px rgba(23, 68, 90, 0.22);
+
 }
 
 .beach-puzzle-story {
@@ -1338,7 +1339,7 @@ body.night-theme .theme-choice {
 }
 
 .game-view.active {
-    display: none;
+    display: flex;
     flex-direction: row; /* Keeps your puzzle board and 'Words to find' side-by-side */
     gap: 40px;
     align-items: flex-start;
