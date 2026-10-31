@@ -1338,6 +1338,10 @@ body.night-theme .theme-choice {
     justify-content: center;
 }
 
+.game-view {
+    display: none;
+}
+
 .game-view.active {
     display: flex;
     flex-direction: row; /* Keeps your puzzle board and 'Words to find' side-by-side */
